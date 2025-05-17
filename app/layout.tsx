@@ -13,7 +13,7 @@ export default function RootLayout({
       <body className="min-h-screen dark:bg-gray-800">
         <Navigation />
         {/* Main Content Section */}
-        <main className="container max-w-md mx-auto pt-5 pb-12 px-4">
+        <main className="container max-w-md mx-auto pt-16 pb-12 px-4">
           {children}
         </main>
       </body>
