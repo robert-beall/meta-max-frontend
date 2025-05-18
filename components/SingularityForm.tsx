@@ -19,7 +19,7 @@ export const SingularityForm = (): ReactNode => {
             <Card>
                 <h1 className="text-xl text-center font-bold text-gray-800 dark:text-gray-100 mb-2">File Metadata Extractor</h1>
                 <p className="text-gray-800 dark:text-gray-300">
-                    Upload documents, images, audio, or video files to instantly view detailed metadata information. We support most common file formats. Missing a format you need? Request additional file type support <a className="text-blue-700 dark:text-white hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500" href="#" aria-label="Request support for additional file types">here</a>.
+                    Upload documents, images, audio, or video files to instantly view detailed metadata information. We support most common file formats. Missing a format you need? Request additional file type support <a className="text-blue-700 dark:text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500" href="#" aria-label="Request support for additional file types">here</a>.
                 </p>
                 <form>
                     <div className="mb-4">
