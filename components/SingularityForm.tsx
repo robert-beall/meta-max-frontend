@@ -17,17 +17,17 @@ export const SingularityForm = ({ handleUpload, className = '' }: UploadProps & 
 
     return (
         <div className={`max-w-md mx-auto w-full p-4 ${className}`}>
-            <Card>
+            <Card className="bg-gray-100 dark:bg-gray-600">
                 <h1 className="text-xl text-center font-bold text-gray-800 dark:text-gray-100 mb-2">File Metadata Extractor</h1>
-                <p className="text-gray-800 dark:text-gray-300">
+                <p className="text-gray-800 dark:text-gray-200">
                     Upload documents, images, audio, or video files to instantly view detailed metadata information. We support most common file formats. Missing a format you need? Request additional file type support <a className="text-blue-700 dark:text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500" href="#" aria-label="Request support for additional file types">here</a>.
                 </p>
                 <form>
                     <div className="mb-4">
-                        <Label htmlFor="dropzone">Upload file</Label>
+                        <Label htmlFor="dropzone" className="text-gray-500 dark:text-gray-300">Upload file</Label>
                         <div
                             {...getRootProps()}
-                            className={`border-2 border-dashed rounded-lg p-4 cursor-pointer ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300"
+                            className={`bg-gray-50 dark:bg-gray-700 border-2 border-dashed rounded-lg p-4 mt-1 cursor-pointer ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300"
                                 }`}
                         >
                             <input {...getInputProps()} id="dropzone" />

@@ -1,4 +1,5 @@
 'use client'
+import { Display } from "@/components/Display";
 import { SingularityForm } from "@/components/SingularityForm";
 import { useEffect, useState } from "react";
 
@@ -14,7 +15,7 @@ export default function Home() {
       } else {
         setViewToggle(false);
       }
-    }, 3000);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -24,6 +25,12 @@ export default function Home() {
   }, [file])
 
   return (
-    <SingularityForm handleUpload={handleUpload} className={`transition-opacity duration-300 ease-in-out ${!viewToggle ? 'opacity-100' : 'opacity-0'}`} />
+    <>
+      {
+        !viewToggle &&
+        <SingularityForm handleUpload={handleUpload} />
+      }
+      <Display className={`transition-opacity duration-400 ease-in-out ${viewToggle ? 'opacity-100' : 'opacity-0'}`} />
+    </>
   );
 }
