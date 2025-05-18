@@ -3,19 +3,20 @@ import { Card, Label, Spinner } from "flowbite-react";
 import { useCallback, useState, type ReactNode } from "react";
 import { useDropzone } from "react-dropzone";
 
-export const SingularityForm = (): ReactNode => {
+export const SingularityForm = ({ handleUpload, className = '' }: UploadProps & BaseProps): ReactNode => {
     const [file, setFile] = useState<File | null>(null);
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
         if (acceptedFiles.length > 0) {
             setFile(acceptedFiles[0]);
         }
-    }, []);
+        handleUpload(acceptedFiles[0]);
+    }, [handleUpload]);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
     return (
-        <div className="max-w-md mx-auto w-full p-4">
+        <div className={`max-w-md mx-auto w-full p-4 ${className}`}>
             <Card>
                 <h1 className="text-xl text-center font-bold text-gray-800 dark:text-gray-100 mb-2">File Metadata Extractor</h1>
                 <p className="text-gray-800 dark:text-gray-300">
