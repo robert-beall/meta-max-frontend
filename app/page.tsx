@@ -1,11 +1,13 @@
 'use client'
 import { Display } from "@/components/Display";
 import { SingularityForm } from "@/components/SingularityForm";
+import parseData from "@/libs/file-handler";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [file, setFile] = useState<globalThis.File | undefined>(undefined);
   const [viewToggle, setViewToggle] = useState(false);
+  const [metadata, setMetadata] = useState<MetaData>();
 
   const handleUpload = (file?: globalThis.File) => {
     setTimeout(() => {
@@ -20,7 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof file !== 'undefined') {
-
+      setMetadata(parseData(file));
     }
   }, [file])
 
@@ -30,7 +32,7 @@ export default function Home() {
         !viewToggle &&
         <SingularityForm handleUpload={handleUpload} />
       }
-      <Display className={`transition-opacity duration-400 ease-in-out ${viewToggle ? 'opacity-100' : 'opacity-0'}`} />
+      <Display data={metadata} className={`transition-opacity duration-400 ease-in-out ${viewToggle ? 'opacity-100' : 'opacity-0'}`} />
     </>
   );
 }

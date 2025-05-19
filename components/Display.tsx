@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
+import { JsonViewer } from "./JsonViewer";
 
-export const Display = ({ className = '' }: BaseProps): ReactNode => {
+export const Display = ({ className = '', data }: BaseProps & DisplayProps): ReactNode => {
     return (// You can easily customize the header content:
         <div className={`bg-white dark:bg-gray-800 border border-gray-200 rounded-lg shadow ${className}`}>
             <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-500 rounded-t-lg border-b-gray-200">
@@ -9,6 +10,7 @@ export const Display = ({ className = '' }: BaseProps): ReactNode => {
             </div>
             <div className="p-4">
                 {/* Card content */}
+                <JsonViewer data={data ?? {}} />
             </div>
         </div >);
 };

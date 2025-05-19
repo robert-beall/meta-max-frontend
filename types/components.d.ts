@@ -5,3 +5,11 @@ interface BaseProps {
 interface UploadProps {
   handleUpload: (file?: globalThis.File) => void;
 }
+
+interface JsonProps {
+  data: object;
+}
+
+interface DisplayProps {
+  data?: MetaData;
+}
