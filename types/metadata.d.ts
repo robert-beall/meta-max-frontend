@@ -1,5 +1,6 @@
 interface MetaData {
   fileInformation: FileInformation;
+  exif?: ExifReader.Tags;
 }
 
 interface FileInformation {

@@ -21,8 +21,12 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const update = async (file: globalThis.File) => {
+      setMetadata(await parseData(file));
+    };
+
     if (typeof file !== 'undefined') {
-      setMetadata(parseData(file));
+      void update(file);
     }
   }, [file])
 
